@@ -1,0 +1,21 @@
+settings =
+{
+    orientation =
+    {
+        default = "landscapeRight",
+        supported =
+        {
+            "landscapeRight",
+            "landscapeLeft",
+        }
+    },
+
+    android =
+    {
+        versionCode = "1"
+    },
+    androidPermissions =
+    {
+        "android.permission.VIBRATE"
+    }
+}
