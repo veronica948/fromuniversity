@@ -1,0 +1,51 @@
+class Polynom
+{ Polynom();
+  Polynom(int k);
+  Polynom(int k, double mas[]);
+  Polynom(const Polynom&ob);
+  double *koef;
+  int n;
+}
+
+Polynom& operator = (const Polynom P)
+{
+   if(&p==this) return this;
+if(koef) delete []koef;
+n=p*n;
+koef = new double[p.n+1];
+
+
+
+Polynom::Polynom operator * (Polynom P)
+{ Polynom mult;
+if(koef)delete[]koef;
+double * koef=new double [Get_Degree()];
+for(int i=0;i<n;i++)
+	for(int j=0;j<P.n;j++)
+  koef.[i].Get_koef();
+mult.n=p.n+n;
+return mult;
+}
+
+istream& operator >>(istream& mystream,Polynom &ob)
+{
+int i;
+cout<<"Enter Degree";
+mystream>>ob.n;
+for(i=ob.n;i>=0;i--)
+ {if(!koef)
+{cout<<"Error";}
+mystream>>koef[i]>>',';
+return mystream;
+}
+
+----------------------------------------------------------------------
+class MyClass
+{
+ int a[size];
+};
+int &MyClass:operator[](int i) {
+  return a[i];
+}
+
+ 

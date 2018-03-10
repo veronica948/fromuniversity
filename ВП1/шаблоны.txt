@@ -1,0 +1,35 @@
+template <class Ttype> тип имя_функциии(список)
+{
+
+}
+
+template <class X> void swapArgs(X&a,X&b)
+{
+ X temp;
+ temp=a;
+ a=b;
+ b=temp;
+}
+
+ int main(){
+ int a=10,b=20;
+ swap.Args(a,b);
+ string c="1",d="2";
+ swapArgs(c,d);
+}
+
+template <class X1,class X2> void swapArgs(X1&a,X2&b){}
+
+//явная специализация
+void swapArgs(int&a,int&b);
+{ int temp;
+  temp=a;
+  a=b;
+  b=temp;
+}
+
+tempalate<>void swapArgs <int>(){}
+template <class X> void f(X a){}
+template <class X,class Y> void f(X a,Y b){}
+int main() {f(10); f(10,20);}
+

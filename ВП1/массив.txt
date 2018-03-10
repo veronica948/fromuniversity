@@ -1,0 +1,28 @@
+template<class AType> class atype {
+	Atype a[size];
+public:
+	atype() {int i;
+		for(i=0;i<size;i++)
+		a[i]=i;
+		}
+	Atype &operator [](int i);
+};
+tempalate<class Atype> Atype &atype<Atype>::operator[](int i) {
+	if(i<0||i>size-1)
+		{cout<<"Error!"; exit(1);
+		}
+	return a[i];
+}
+int main() {
+	atype<int> a;
+        for(int i=0;i<size;i++)
+		a[i]=i;
+	a[size+8]=100;
+	system("pause");
+	return 0;
+}
+
+tempalate <class Atype=int> class atype {};
+atype<> a;
+
+
