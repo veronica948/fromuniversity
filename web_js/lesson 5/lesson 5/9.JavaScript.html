@@ -1,0 +1,20 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html id="htmlTop">
+<head>
+<title data-bind="text: description"></title>
+    <script type='text/javascript' src="jquery-2.0.3.min.js"></script>
+<script type='text/javascript' src="knockout.js"></script>
+<script type="text/javascript" src="model.js"></script>
+<script type="text/javascript" src="ajax.js"></script>
+</head>
+<body>
+		<h2 data-bind="text: pageTitle"></h2>
+		<div id="menu" data-bind="foreach: menu">
+			<a class="menu" data-bind="attr : { href:url }, text:title, click: $parent.loadMenuPage"></a>
+		</div>
+		<div id="content" >
+		</div>
+    <div data-bind="text: title">BSU &copy;</div>
+			
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿{
+	menu:
+	[
+		{title:'Урок 6.1',url:'page1.html'},
+		{title:'Урок 6.2',url:'page2.html'},
+		{title:'Урок 7',url:'page3.html'}
+	],
+	description:'Урок 9',
+	title:'Урок 9 - Knockout'
+}

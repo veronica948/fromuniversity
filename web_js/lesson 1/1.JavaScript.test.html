@@ -1,0 +1,41 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<!-- 1. Способы использования JS на html странице -->
+<!-- первый способ подключения JS кода - через внешние файлы -->
+<script SRC="common.js"></script>
+
+<!-- второй способ - в теге скрипт -->
+<script type="text/javascript">
+var i = 0;
+</script>
+
+<script type="text/javascript">
+<!-- -->
+
+/*var mas = [{title:'',subMenu:[{title:''},{title:''}]},{},{}];
+var menuElement = 
+{
+	title: 'Заголовок', 
+	subMenu:[{title:'Подменю1'},{title:'Подменю2'}]
+	};
+mas.push(menuElement);
+alert(menuElement.subMenu[1].title);*/
+</script>
+
+</head>
+<body>
+		<h2>Урок 1</h2>
+        <div id="dataKeeper">Способы использования JS на html странице</div>
+        <ul name="info">
+            <li style="background-color:red">Примечание</li>
+            <li class="info">P.S.</li>
+        </ul>
+        <div id="footer">BSU &copy;</div>
+		<input type="button" 
+			style="width: 100px; margin-top: 10px;"
+			onclick="this.style.marginTop = parseInt(this.style.marginTop)-5+'px'"
+			value="Передвинуть"/> <!-- третий способ - в свойствах DOM-элементов которые отвечают за обработчики событий -->
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+<body><h2>Урок 2</h2><div id="data">DOM</div>
+        <ul id="info">
+            <li style="background-color:red">Примечание</li>
+            <li class="info"><span>23</span>P.S.</li>
+        </ul>
+		<a name="link" href="http://google.com" >Link</a>
+        <div id="footer">BSU &copy;</div>
+		<script type="text/javascript">
+<!-- доступ к элементам -->
+// 1. через массив элементов childNodes, firstChild, lastChild, etc
+
+for(var i=0; i<document.body.childNodes.length; i++) {
+    var child = document.body.childNodes[i];
+    //alert(child.tagName);
+}
+
+// Свойства firstChild и lastChild показывают на первый и последний дочерние элементы и равны null, если детей нет.
+// Свойство parentNode указывает на родителя
+// Свойства previousSibling и nextSibling указывают на левого и правого братьев узла.
+
+// получаем текст последнем тэге div:
+
+var text = document.body.lastChild.previousSibling.previousSibling.innerHTML;
+alert(text); 
+
+// 2. через поиск элементов
+// 2.1. по id
+
+document.getElementById('data').style.color = 'blue';
+
+// 2.2. по тэгу
+
+var ul = document.getElementById('info');
+var elems = ul.getElementsByTagName('span');
+
+for(var i=0; i<elems.length; i++) 
+ {
+ elems[i].style.color = 'red';
+ //alert(elems[i].tagName);
+ }
+
+// 2.3. по name
+
+var link = document.getElementsByName('link')[0];
+link.innerText = "Ссылка";
+
+
+</script>
+		
+</body>
+</html>

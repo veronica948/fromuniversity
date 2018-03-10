@@ -1,0 +1,29 @@
+#include<iostream.h>
+int main()
+{int const N=10;
+ int a[N],x,i,n=100,k=0,max;
+   for(i=0;i<N;i++)
+   a[i]=5;
+
+  for(i=0;i<N;i++)
+  {cout<<"a["<<i<<"]=";
+  cout<<a[i]<<" "; }
+
+  max=a[0];
+
+  for(i=0;i<N;i++)
+  {
+   if(a[i]>=max)
+   { if(a[i]==max)
+     k++;
+     else {a[i]=max; k=1;}
+
+   }
+
+  }
+  cout<<"kol max="<<k<<endl;
+
+
+  system("pause");
+  return 0;
+ }

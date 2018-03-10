@@ -1,0 +1,22 @@
+﻿Построение начато 07.11.2013 16:59:38.
+     1>Проект "E:\graph\graph\graph.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Обращение к "Debug\graph.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt graph.cpp
+         graph.cpp
+     1>e:\graph\graph\graph.cpp(171): error C2065: Adjacency_Matrix: необъявленный идентификатор
+     1>e:\graph\graph\graph.cpp(171): error C2228: выражение слева от ".v" должно представлять класс, структуру или объединение
+                 тип: nodes *
+                 возможно, имеется в виду "->"
+     1>e:\graph\graph\graph.cpp(175): error C2228: выражение слева от ".label" должно представлять класс, структуру или объединение
+                 тип: nodes *
+                 возможно, имеется в виду "->"
+     1>e:\graph\graph\graph.cpp(180): error C2228: выражение слева от ".color" должно представлять класс, структуру или объединение
+                 тип: nodes *
+                 возможно, имеется в виду "->"
+     1>Построение проекта "E:\graph\graph\graph.vcxproj" завершено (целевые объекты build) с ошибкой.
+
+СБОЙ построения.
+
+Затраченное время: 00:00:01.48

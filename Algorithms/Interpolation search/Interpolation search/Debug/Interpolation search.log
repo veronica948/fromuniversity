@@ -1,0 +1,22 @@
+﻿Построение начато 11.12.2013 19:59:14.
+     1>Проект "E:\Алгоритмы\Interpolation search\Interpolation search\Interpolation search.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Создание "Debug\Interpolation search.unsuccessfulbuild", так как было задано "AlwaysCreate".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "Interpolation search.cpp"
+         Interpolation search.cpp
+     1>e:\алгоритмы\interpolation search\interpolation search\interpolation search.cpp(14): warning C4715: Interp: значение возвращается не при всех путях выполнения
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Алгоритмы\Interpolation search\Debug\Interpolation search.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Interpolation search.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\Алгоритмы\Interpolation search\Debug\Interpolation search.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Алгоритмы\Interpolation search\Debug\Interpolation search.lib" /MACHINE:X86 "Debug\Interpolation search.obj"
+         LINK : не найден или не выполнена сборка E:\Алгоритмы\Interpolation search\Debug\Interpolation search.exe при последней инкрементной компоновке; выполняется полная компоновка
+         Interpolation search.vcxproj -> E:\Алгоритмы\Interpolation search\Debug\Interpolation search.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\Алгоритмы\Interpolation search\Debug\Interpolation search.exe;#1" /manifest "Debug\Interpolation search.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Файл "Debug\Interpolation search.unsuccessfulbuild" удаляется.
+         Обращение к "Debug\Interpolation search.lastbuildstate".
+     1>Построение проекта "E:\Алгоритмы\Interpolation search\Interpolation search\Interpolation search.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:03.76

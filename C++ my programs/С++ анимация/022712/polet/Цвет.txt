@@ -1,0 +1,2 @@
+ 
+  Ris->TransparentColor = Ris->Canvas->Pixels[1][1];

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>The main page</title>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	<div id="menu"></div>
+	<script type="text/javascript">
+	list1 = {
+	name: "list1",
+	submenu: ["l1kjhlkj ;ljk;lk ;","l2 lkjkljklj ljkl ","l3"]
+};
+list2 = {
+	name: "list2",
+	submenu: ["l1","l2"]
+};
+list3 = {
+	name: "list3",
+	submenu: ["l1","l2","l3"]
+};
+list4 = {
+	name: "list4",
+	submenu: ["l1","l2","l3"]
+}; 
+var mas=[list1,list2,list3,list4];
+
+var dive=document.getElementById('menu');
+var newUl=document.createElement('ul');
+newUl.id='newUl';
+dive.appendChild(newUl);
+for(var i=0;i<mas.length;i++)
+{
+	var newLi=document.createElement('li');
+	newUl.appendChild(newLi);
+	newLi.className='tittle';
+	newLi.innerHTML=mas[i].name;
+	var newUl_2=document.createElement('ul');
+		newUl_2.id='submenu';
+		newLi.appendChild(newUl_2);
+	for(var j=0;j<mas[i].submenu.length;j++) {
+		var newLi_2=document.createElement('li');
+		newUl_2.appendChild(newLi_2);
+		newLi_2.className='newLi_2';
+		newLi_2.innerHTML=mas[i].submenu[j];
+	}
+}
+</script>
+</body>
+</html>

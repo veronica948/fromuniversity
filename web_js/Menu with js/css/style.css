@@ -1,0 +1,26 @@
+#newUl {
+	margin-right:auto;
+	margin-left:auto;
+	width: 820px;
+}
+a {
+	text-decoration: none;
+	color: #606;
+}
+#title {
+	display:inline-block;
+	position: relative;
+	background-color: #C9F;
+	width: 180px;
+	border-left: solid #639 1px;
+	text-align:center;
+	font: 30px Verdana, Geneva, sans-serif;
+}
+#submenu {
+	display:none;	
+	width: 140px;
+	list-style: none;
+	text-align:center;
+	background-color:#99F;
+	position: absolute;
+}

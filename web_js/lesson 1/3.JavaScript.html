@@ -1,0 +1,49 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+<body>
+		<h2>Урок 3</h2>
+        <div id="data">Манипуляция DOM</div>
+        <ul id="info">
+            <li style="background-color:red">Примечание</li>
+            <li class="info">P.S.</li>
+        </ul>
+		<a name="link" href="http://google.com" >Link</a>
+        <div id="footer">BSU &copy;</div>
+		<script type="text/javascript">
+<!-- манипуляция элементами DOM -->
+// 1. создание и добавление 
+
+var newLi = document.createElement('li'); // создание нового элемента li
+newLi.className = 'info'; // изменение свойств
+newLi.id = 'li2';
+//newLi.style.backgroundColor = 'blue';
+newLi.innerHTML = 'P.P.S.'
+
+// 2. добавление в DOM
+// 2.1. appendChild
+
+document.getElementById('info').appendChild(newLi);
+
+// 2.2. insertBefore / insertAfter 
+newLi.innerHTML = 'S.';
+var infoUL = document.getElementById('info');
+infoUL.insertBefore(newLi,infoUL.firstChild);
+
+// 3. удаление 
+
+var infoUL = document.getElementById('info');
+//infoUL.removeChild(newLi);
+newLi.parentNode.removeChild(newLi);
+
+// 4. создание через innerHTML
+//newLi.innerHTML = '<a id="yandex" href="http://yandex.ru/">Yandex</a>';
+//var newA = document.getElementById('yandex');
+//newA.innerText = 'YA'; //новый элемент действительно в ДОМе:
+
+</script>
+		
+</body>
+</html>

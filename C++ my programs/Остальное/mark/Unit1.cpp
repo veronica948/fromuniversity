@@ -1,0 +1,27 @@
+#include<iostream.h>
+int main()
+{ int n;
+ 
+ while(1)
+ {cout<<"Enter mark"<<endl;
+ cin>>n;
+ if((n<0)||(n>5)){cout<<"error"<<endl; break; }
+ switch(n)
+ {   case 0: cout<<"abcent"<<endl;
+             break;
+ case 1:
+ case 2:
+        cout<<"bad"<<endl;
+             break;
+ case 3 :cout<<"nod bad"<<endl;
+             break;
+ case 4: cout<<"good"<<endl;
+             break;
+ case 5: cout<<"wonderful"<<endl;
+             break;
+ }
+ }
+ system("pause");
+ return 0;
+ }
+

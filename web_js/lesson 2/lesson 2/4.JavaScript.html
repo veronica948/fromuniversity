@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<body>
+		<h2>Урок 4</h2>
+        <div id="dataKeeper">Обработчики событий на html странице</div>
+        <ul name="info">
+            <li style="background-color:red">Примечание</li>
+            <li class="info">P.S.</li>
+        </ul>
+        <div id="footer">BSU &copy;</div>
+		<input type="button" 
+			style="width: 100px; margin-top: 10px;"
+			onclick="moveButton()"
+			value="Передвинуть"/> <!-- первый способ задать обработчик события - через атрибуты html-тэга -->
+
+			
+<script type="text/javascript">
+	
+<!-- 4.1. Виды событий -->
+
+<!-- a) События от DOM-элементов: click, mouseover, etc -->
+<!-- b) События от окна (window): resize, etc -->
+<!-- c) другие: load, readystatechange, etc -->
+
+<!-- 4.2. Обработчики событий -->
+
+<!-- Функция, которая реагирует на событие - обработчик события Обычно называется on+событие (onclick). -->
+
+<!-- 4.2.1 первый способ задать обработчик события - через атрибуты html-тэга -->
+<!-- -->
+function moveButton() {
+	this.style.marginTop = parseInt(this.style.marginTop)-5+'px';
+}
+</script>
+
+<!-- 4.2.2 второй способ задать обработчик события - через свойство объекта -->
+<script type="text/javascript">
+
+<!-- используя анонимную функцию -->
+var dataK = document.getElementById('dataKeeper');
+dataK.onmouseover = function() {
+	dataK.style.color = 'red';
+};
+
+<!-- используя существующую функцию -->
+
+function dataK_mouseout() {
+	this.style.color = 'black';
+}
+
+dataK.onmouseout = dataK_mouseout;
+//но не так:
+//dataK.onmouseout = dataK_mouseout(); - этот код не правильный!
+
+<!-- 4.2.3 третий - через специальные методы -->
+<!-- по стандарту W3C: для большинства браузеров и IE9+ -->
+
+<!-- element.addEventListener( имя_события, обработчик, фаза) -->
+
+var highlight_on = function() {
+	dataK.style.backgroundColor = 'yellow';
+}
+
+var addtext = function() {
+	this.innerHTML += ' clicked ';
+	dataK.removeEventListener('click', addtext, false);
+}
+
+var highlight_off = function() {
+	this.style.backgroundColor = 'white';
+}
+
+dataK.addEventListener('click', highlight_on, false);
+dataK.addEventListener('click', addtext, false);
+
+<!-- по стандарту Microsoft (работает только в IE) -->
+
+//Установка обработчика:
+
+//element.attachEvent( "on"+имя события, обработчик)
+//Удаление обработчика:
+
+//element.detachEvent( "on"+имя события, обработчик)
+
+
+</script>
+
+<script type="text/javascript">
+</script>
+
+</body>
+</html>

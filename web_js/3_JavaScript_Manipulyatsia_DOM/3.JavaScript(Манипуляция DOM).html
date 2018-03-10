@@ -1,0 +1,158 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+</head>
+<body>
+<h2>Урок 3</h2>
+<div id="data">Манипуляция DOM (http://learn.javascript.ru/modifying-document)</div>
+        <ul id="info">
+            <li style="background-color:red">Примечание</li>
+            <li class="info">P.S.</li>
+        </ul>
+<a name="link" href="http://google.com" >Link</a><table>
+<tr>
+
+<td valign=top><ol id=list1><h3>Список 1</h3></ol> <input value="Добавить в UL способ 1 (поэлементно) &#x25ba;" onclick="add1()" type="button">
+<td valign=top><ol id=list2><h3>Список 2</h3></ol> <input value="Добавить в UL способ 2 (все сразу) &#x25ba;" onclick="add2()" type="button">
+<td valign=top><ol id=list3><h3>Список 3</h3></ol> <input value="Добавить в UL способ 3 (много innerHTML) &#x25ba;" onclick="add3()" type="button">
+<td valign=top><ol id=list4><h3>Список 4</h3></ol> <input value="Добавить в UL способ 3 (один innerHTML) &#x25ba;" onclick="add4()" type="button">
+</tr></table>
+<div id="footer">BSU &copy;</div>
+
+
+
+<script type="text/javascript">
+<!-- манипуляция элементами DOM -->
+// 1. создание
+
+var newLi = document.createElement('li'); // Создает новый элемент с указанным тегом 
+var newText = document.createTextNode('Некий тут text');//Создает новый текстовый узел с данным текстом: 
+
+newLi.className = 'info'; // изменение свойств
+newLi.id = 'li2';
+//newLi.style.backgroundColor = 'blue';
+newLi.innerHTML = 'P.P.S.++++++++++++++++++++++'
+//1.2 Клонирование
+//Новый элемент можно также склонировать из существующего:
+
+newElem = list2.cloneNode(true);//    Клонирует элемент elem, вместе с атрибутами, включая вложенные в него.
+newElem = list1.cloneNode(false);//   Клонирует элемент elem, вместе с атрибутами, но без подэлементов.
+
+
+// 2. добавление в DOM
+// Чтобы DOM-узел был показан на странице, его необходимо вставить в документ.
+// Все методы вставки возвращают вставленный узел,
+// 2.1. appendChild
+
+document.getElementById('info').appendChild(newLi);//Добавляет newLi в список дочерних элементов info. Новый узел добавляется в конец списка. 
+
+// 2.2. insertBefore / insertAfter    parentElem.insertBefore(elem, nextSibling) Вставляет elem в список дочерних parentElem, перед элементом nextSibling. 
+// Вместо nextSibling может быть null, тогда insertBefore работает как appendChild.
+newLi.innerHTML = 'S.-----------------';
+var infoUL = document.getElementById('info');
+infoUL.insertBefore(newLi,infoUL.firstChild);
+
+// 3. удаление 
+// Если вы хотите переместить элемент на новое место — не нужно его удалять со старого.
+// Все методы вставки автоматически удаляют вставляемый элемент со старого места.
+
+var infoUL = document.getElementById('info');
+//infoUL.removeChild(newLi);
+//newLi.parentNode.removeChild(newLi);
+
+// 4. создание через innerHTML
+//newLi.innerHTML = '<a id="yandex" href="http://yandex.ru/">Yandex</a>';
+//var newA = document.getElementById('yandex');
+//newA.innerText = 'YA'; //новый элемент действительно в ДОМе:
+
+// =============================================================================================================
+// взято из http://www.codingclub.net/Articles/JavaScript/Optimizaciyu_JavaScript_chast_1_Dobavlenie_elementov_DOM_v_dokument
+// Вставлять элемент DOM с помощью JavaScript к сожалению, грузит страницу. 
+// Поэтому вставлять много элементов DOM один за одним — плохая идея:
+function add1(){
+var list = document.getElementById("list1");  
+var items = ["раз", "два", "три", "четыре"], el;  
+for (var i = 0; items[i]; i++) {  
+  el = document.createElement("li");  
+  list.appendChild(el); // очень плохая идея 
+  el.appendChild( document.createTextNode(items[i]) );  
+} 
+var d0 = new Date();
+for (var i = 0; i<N; i++) {  
+  el = document.createElement("li");  
+  el.appendChild( document.createTextNode("номер "+i) );  
+  list.appendChild(el); // очень плохая идея 
+} 
+var d1 = new Date();
+var time=document.createTextNode("потратили "+(d1-d0)+" милисек");
+list.insertBefore(time,list.firstChild );  
+
+}   
+//используйте фрагменты документа. Фрагменты документа — контейнеры для сохранения элементов DOM; 
+//тогда, вместо раздельной вставки, можно сделать все одним махом. 
+//Фрагмент документа сам по себе не является узлом, и ничего не будет, если показать его в объектной модели. 
+//Она будет невидимой сетью для проведения элементов перед заложением их DOM.
+var N=500;//сколько строк будем генерировать
+function add2(){
+ var list = document.getElementById("list2"),  
+    frag = document.createDocumentFragment(),  
+    items = ["раз2", "два2", "три2", "четыре2"],
+    el;  
+  
+for (var i = 0; items[i]; i++) {  
+  el = document.createElement("li");  
+  el.appendChild( document.createTextNode(items[i]) );  
+  frag.appendChild(el); // Ништяк!  
+}  
+var d0 = new Date();
+for (var i = 0; i<N; i++) {  
+  el = document.createElement("li");  
+  el.appendChild( document.createTextNode("номер "+i) );  
+  frag.appendChild(el); // Ништяк!  
+}  
+var d1 = new Date();
+frag.insertBefore(document.createTextNode("потратили "+(d1-d0)+" милисек"),frag.firstChild );  
+list.appendChild(frag);  
+}
+
+
+function add3(){
+ var el = document.getElementById("list3");  
+var d0 = new Date();
+el.innerHTML += '';
+for (var i = 0; i <N; i++) {
+    el.innerHTML += '<li>номер ' + i + '</li>';
+}
+var d1 = new Date();
+var time=document.createTextNode("потратили "+(d1-d0)+" милисек");
+el.insertBefore(time,el.firstChild );  
+}
+
+function add4(){
+var el = document.getElementById("list4");  
+var d0 = new Date();
+
+var innHTML = '';//строка в которую все сразу поместим
+for (var i = 0; i <N; i++) {
+    innHTML += '<li>номер ' + i + '</li>';
+}
+el.innerHTML +=innHTML;
+var d1 = new Date();
+var time=document.createTextNode("потратили "+(d1-d0)+" милисек");
+el.insertBefore(time,el.firstChild );  
+
+var innHTML = []; // можно не строкой,а  массивом и потом его перевести в строку с помощью .join('');
+for (var i = 0; i <N; i++) {innHTML.push('<li>номер ' + i + '</li>');}
+el.innerHTML +=innHTML.join('');
+var d1 = new Date();
+var time=document.createTextNode("потратили "+(d1-d0)+" милисек");
+el.insertBefore(time,el.firstChild );  
+
+
+}
+
+</script>
+		
+</body>
+</html>
